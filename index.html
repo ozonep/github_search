@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Github API</title>
+</head>
+<body>
+    <header>
+        <h1>Check repos easily!</h1>
+        <input type="text" placeholder="type username">
+        <input type="button" value="Search" id="button">
+    </header>
+    <main></main>
+    <template id="repos">
+        {{#each userRepos}}
+        <div class="container">
+            <img class="avatar" src="{{owner.avatar_url}}" alt="">
+            <span class="repoOwner">{{owner.login}}</span>/<span class="repoName">{{name}}</span>
+        </div>
+        <div class="commitsContainer"></div>
+        {{/each}}
+    </template>
+    <template id="idCommits">
+            <div class="commit-container">
+                <ul>
+            {{#each userCommits}}
+                <li><span class="commitMsg">{{commit.message}}</span>/<span class="commitAuthor">{{commit.author.name}}</span>/<span class="commitDate">{{commit.author.date}}</span></li>
+            {{/each}}
+                </ul>
+            </div>  
+        </template>
+    <script src="./script/handlebars.js"></script>
+    <script src="./script/jquery.js"></script>
+    <script src="./script/pass.js"></script>
+    <script src="./script/script.js"></script>
+</body>
+</html>

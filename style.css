@@ -1,0 +1,38 @@
+body {
+    font-family: "PT Sans", Arial, sans-serif;
+    background-color: lightgoldenrodyellow;
+}
+
+header {
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+h1 {
+    color: red;
+    font-size: 20px;
+}
+
+.avatar {
+    width: 100px;
+    vertical-align: middle;
+}
+
+.container {
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+.commitsContainer {
+    position:absolute;
+    opacity: 0;
+    z-index: -1;
+    /* transition: opacity 0.1s linear; */
+}
+  
+.commitsContainer.active {
+    position: static;
+    z-index: 0;
+    opacity: 1;
+    transition: opacity 1s linear;
+  }
